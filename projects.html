@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/cards.css">
+</head>
+
+<body>
+  <video autoplay loop muted>
+    <source src="/media/background.mp4" type="video/mp4">
+  </video>
+
+  <div class="gradient"></div>
+  <header class="transparent-header">
+    <div class="header-left">
+      <!--Change font and size of time-->
+      <p><span id="datetime"></span></p>
+
+      <script>
+        var dt = new Date();
+        document.getElementById("datetime").innerHTML = dt.toLocaleTimeString();
+      </script>
+    </div>
+    <div class="header-right">
+      <a href="/index.html">
+        <button class="header-button">About</button>
+      </a>
+
+      <a href="/projects.html">
+        <button class="header-button">Projects</button>
+      </a>
+    </div>
+  </header>
+
+
+  <br>
+
+  <div class="content">
+
+    <!--First Row-->
+    <section class="articles">
+      <article>
+        <div class="article-wrapper">
+          <figure>
+            <img src="/media/bot.png" alt="bot-icon" />
+          </figure>
+          <div class="article-body">
+            <span class="status-label">Cash</span>
+            <p>
+              Multi-purpose discord bot with over 300 commands that serves thousands of users across many servers
+            </p>
+            <span class="status-language">python</span>
+            <span class="status-language">batch</span>
+            <span class="status-language">sql</span>
+            <span class="status-language">bash</span>
+          </div>
+        </div>
+      </article>
+      <article>
+
+        <div class="article-wrapper">
+          <figure>
+            <img src="/media/site.png" alt="bot-website" />
+          </figure>
+          <div class="article-body">
+            <span class="status-label">Cash Site</span>
+            <p>
+              Simple website for 'cash' bot.
+            </p>
+            <span class="status-language">html</span>
+            <span class="status-language">css</span>
+            <span class="status-language"> js </span>
+          </div>
+        </div>
+      </article>
+      <article>
+
+        <br>
+        <!--Second Row-->
+        <div class="article-wrapper">
+          <figure>
+            <img src="/media/subscan.png" alt="subdomain-tool" />
+          </figure>
+          <div class="article-body">
+            <span class="status-label">Subscan</span>
+            <p>
+              Simple tool to find subdomains from a website using crt.sh
+            </p>
+            <span class="status-language">python</span>
+            <span class="status-language">bash</span>
+          </div>
+        </div>
+      </article>
+      <article>
+
+        <div class="article-wrapper">
+          <figure>
+            <img src="/media/azure.png" alt="azure" />
+          </figure>
+          <div class="article-body">
+            <span class="status-label">monitor</span>
+            <p>
+              Monitor is a collection of two scripts made for server monitoring. The first one gets various info and
+              informs the administrator via telegram when cpu/ram usage is very high . The second script logs all active
+              connections and updates them.
+            </p>
+            <span class="status-language">bash</span>
+          </div>
+        </div>
+      </article>
+      <article>
+
+        <!--Third row-->
+        <!--On each project put an href link that leads to github -->
+
+        <div class="article-wrapper">
+          <figure>
+            <img src="/media/rpi32.ppm" alt="rasberry-pi" />
+          </figure>
+          <div class="article-body">
+            <span class="status-label">Rpi3</span>
+            <p>
+              A simple project that turns a rasberry-pi into a machine that is capable of self hosting various programs
+              ,sql databases, ftp/vsfptd and multimedia server using plex with ngrok
+            </p>
+            <span class="status-language">bash</span>
+          </div>
+        </div>
+      </article>
+      <article>
+
+    </section>
+
+    <br>
+
+  </div>
+</body>
+
+</html>

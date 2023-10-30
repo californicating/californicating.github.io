@@ -1,0 +1,274 @@
+article {
+    --img-scale: 1.001;
+    --title-color: black;
+    --link-icon-translate: -20px;
+    --link-icon-opacity: 0;
+    position: relative;
+    border-radius: 16px;
+    box-shadow: none;
+    background: #000000;
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+}
+
+article a::after {
+    position: absolute;
+    inset-block: 0;
+    inset-inline: 0;
+    cursor: pointer;
+    content: "";
+}
+
+/* basic article elements styling */
+article h2 {
+    margin: 0 0 18px 0;
+    font-family: "Bebas Neue", cursive;
+    font-size: 1.9rem;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+/* image */
+article img {
+    max-width: 100%;
+    transform-origin: center;
+    transform: scale(var(--img-scale));
+    transition: transform 0.4s ease-in-out;
+}
+
+.article-body {
+    padding: 24px;
+}
+
+article a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #28666e;
+}
+
+article a:focus {
+    outline: 1px dotted #28666e;
+}
+
+article a .icon {
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+    transform: translateX(var(--link-icon-translate));
+    opacity: var(--link-icon-opacity);
+    transition: all 0.3s;
+}
+
+/* using the has() relational pseudo selector to update our custom properties */
+article:has(:hover, :focus) {
+    --img-scale: 1.1;
+    --title-color: #28666e;
+    --link-icon-translate: 0;
+    --link-icon-opacity: 1;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    text-decoration: none;
+    margin: 0;
+    padding: 48px 0;
+    font-family: "Figtree", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    min-height: 100vh;
+    background-color: black;
+}
+
+/* Center cards */
+
+.articles {
+    display: grid;
+    max-width: 950px;
+    margin-inline: auto;
+    padding-inline: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+@media screen and (max-width: 960px) {
+    article {
+        container: card/inline-size;
+    }
+
+    .article-body p {
+        display: none;
+
+    }
+}
+
+
+@container card (min-width: 380px) {
+    .article-wrapper {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 16px;
+    }
+
+    .article-body {
+        padding-left: 0;
+    }
+
+    figure {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    figure img {
+        height: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+}
+
+.sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.content {
+    margin-top: 80px;
+    padding-top: 20px;
+    position: relative;
+    color: #fff;
+}
+
+
+/* Hide the scrollbar track and make it transparent */
+body::-webkit-scrollbar {
+    width: 7px;
+    background-color: #000000;
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+body::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+/* Style the scrollbar track (the background) */
+body::-webkit-scrollbar-track {
+    background-color: #f3f3f300;
+}
+
+/* Style for the status wrapper */
+.status-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the status label */
+.status-label {
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+
+
+.status-language {
+    height: 1rem;
+    width: 63px;
+    border-radius: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #033966be;
+    color: #ffffff;
+    text-align: center;
+    font-size: 13px;
+    padding: 0 10px;
+    border: 0.7px solid #535353; /* specify border-width, border-style, and border-color */
+}
+
+
+@font-face {
+    font-family: journal;
+    src: url(/media/Journal.ttf)
+  }
+  
+p {
+    font-family: journal;
+}
+
+
+.transparent-header {
+    background-color: transparent;
+    /* Adjust the alpha value for transparency */
+    padding: 10px 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header-left {
+    margin-left: 20px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.header-right {
+    margin-right: 70px;
+}
+
+.header-button {
+    font-size: 25px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.header-button:hover {
+    color: #4100f5;
+}
+
+a {
+    text-decoration: none;
+  }
+  
